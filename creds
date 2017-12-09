@@ -1,0 +1,6 @@
+curl -X POST   http://localhost:9876/learn/api/public/v1/oauth2/token   -u 47db3140-53aa-4f0c-a1f5-e3b8689ce50e:wS9H88B2yFwSNaGYSPv4juZtXQ8pzAy2   -H 'cache-control: no-cache'   -H 'content-type: application/x-www-form-urlencoded'   -H 'postman-token: 71c7afbe-cb8a-1c42-efea-dcc71022bb6e'   -d grant_type=client_credentials
+
+
+
+curl -i -X POST -u "47db3140-53aa-4f0c-a1f5-e3b8689ce50e:wS9H88B2yFwSNaGYSPv4juZtXQ8pzAy2" -H 'content-type: application/x-www-form-urlencoded' -d "grant_type=client_credentials" http://localhost:9876/learn/api/public/v1/oauth2/token 
+
