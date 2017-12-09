@@ -40,7 +40,7 @@ auth = "Bearer " + token
 method = "POST"
 
 baseurl = "https://xx-csa.bbcollab.com/"
-url = baseurl + "users"
+url = baseurl + "sessions"
 
 headers = {
     'accept': "application/json",
@@ -50,15 +50,71 @@ headers = {
     'postman-token': "d9e338c3-6d4c-9aa5-08f7-2d17bb3d75a3"
     }
 
-body = {
+createUserBody = {
     "lastName": "Fu",
     "firstName": "bar",
     "displayName": "Smelly Belly",
     "extId": "smellybelly",
     "email": "smellybelly@geniusleague.com"
 }
+
+body = {
+  "allowInSessionInvitees": "true",
+  "guestRole": "participant",
+  "openChair": "true",
+  "mustBeSupervised": "true",
+  "noEndDate": "true",
+  "description": "rydesc",
+  "recurrenceRule": {
+    "daysOfTheWeek": [
+      "mo"
+    ],
+    "recurrenceEndType": "on_date",
+    "numberOfOccurrences": 0,
+    "interval": "1",
+    "recurrenceType": "daily"
+  },
+  "occurrenceType": "S",
+  "canPostMessage": "true",
+  "participantCanUseTools": "true",
+  "courseRoomEnabled": "true",
+  "canAnnotateWhiteboard": "true",
+  "canDownloadRecording": "true",
+  "canShareVideo": "true",
+  "name": "rysession",
+  "raiseHandOnEnter": "true",
+  "boundaryTime": "0",
+  "startTime": {
+    "equalNow": "true",
+    "dayOfYear": 342,
+    "year": 2017,
+    "weekyear": 49,
+    # "chronology": {
+    #   "zone": {
+    #     "fixed": "true",
+    #     "id": "string"
+    #   }
+    # },
+    "hourOfDay": 14,
+    "minuteOfHour": 30,
+  },
+  "allowGuest": "true",
+  "showProfile": "true",
+  "canShareAudio": "true"
+}
+
+# error msg
+# {"errorKey":"invalid_json","errorMessage":"The json was invalid.","errorDetail":"Can not deserialize instance of org.joda.time.DateTime out of START_OBJECT token"}
+# fixed by removal of startTime and endTime object
+# removing those causes an error - they are describes as optional but maybe are not
+print("body: ", body)
+
 payload = json.dumps(body)
 
+# payload = body
+
 response = requests.request(method, url, data=payload, headers=headers)
+
+# response = requests.request(method, url, headers=headers)
 
 print("\nResponse: \n", response.text)
