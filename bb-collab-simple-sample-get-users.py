@@ -49,7 +49,8 @@ headers = {
     'cache-control': "no-cache",
     }
 
-# createUserBody = {
+# body for creating a user
+# body = {
 #     "lastName": "Ug",
 #     "firstName": "ly",
 #     "displayName": "Yomama so",
@@ -57,27 +58,28 @@ headers = {
 #     "email": "derp@geniusleague.com"
 # }
 
-body = {
-    "startTime":"2017-12-14T11:33:44.123Z",
-    "allowInSessionInvitees": 'true',
-    "guestRole": "presenter",
-    "openChair": 'true',
-    "sessionExitUrl": "string",
-    "mustBeSupervised": 'false',
-    "noEndDate": 'true',
-    "description": "Another Room",
-    "canPostMessage": 'true',
-    "participantCanUseTools": 'true',
-    "courseRoomEnabled": 'true',
-    "canAnnotateWhiteboard": 'true',
-    "canDownloadRecording": 'true',
-    "canShareVideo": 'true',
-    "name": "Collab API Demo Room",
-    "raiseHandOnEnter": 'false',
-    "allowGuest": 'true',
-    "showProfile": 'true',
-    "canShareAudio": 'true'      
-}
+# body for creating a session - note the way startTime is done
+# body = {
+#     "startTime":"2017-12-14T11:33:44.123Z",
+#     "allowInSessionInvitees": 'true',
+#     "guestRole": "presenter",
+#     "openChair": 'true',
+#     "sessionExitUrl": "string",
+#     "mustBeSupervised": 'false',
+#     "noEndDate": 'true',
+#     "description": "Another Room",
+#     "canPostMessage": 'true',
+#     "participantCanUseTools": 'true',
+#     "courseRoomEnabled": 'true',
+#     "canAnnotateWhiteboard": 'true',
+#     "canDownloadRecording": 'true',
+#     "canShareVideo": 'true',
+#     "name": "Collab API Demo Room",
+#     "raiseHandOnEnter": 'false',
+#     "allowGuest": 'true',
+#     "showProfile": 'true',
+#     "canShareAudio": 'true'      
+# }
 
 
 
