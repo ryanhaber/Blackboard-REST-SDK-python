@@ -6,8 +6,6 @@ import requests
 import time
 import json
 
-# needed for Collaborate's implementation of OAuth
-import jwt
 
 
 def getAccessToken():
