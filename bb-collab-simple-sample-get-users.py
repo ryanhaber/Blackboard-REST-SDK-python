@@ -23,7 +23,7 @@ def getAccessToken():
     headers = { "content-Type": "application/x-www-form-urlencoded" }
 
     # request access token
-    response = requests.request("POST", url, headers=headers, params=encoded)
+    response = requests.request("POST", url, headers=headers)
 
     responsebody = json.loads(response.text)
     return responsebody["access_token"]
