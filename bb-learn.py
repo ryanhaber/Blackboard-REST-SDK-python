@@ -18,7 +18,7 @@ def getToken():
     payload = {
         'grant_type': 'client_credentials'
     }
-    credentials = b"9b896df0-8628-4fb2-9ff5-9f64dd93155a:w4Tfn4LZtRAz2VrYFEPMSNkReFctqOvJ"
+    credentials = b"dc460647-e357-44b8-9a31-9704603033ab:2nNAKmbmOPnHaiRONpd3S9VSwatIdmNF"
     encoded = base64.b64encode(credentials)
     encodedAuth = b"Basic " + encoded
 
@@ -44,10 +44,10 @@ print("token: ", token)
 
 auth = "Bearer " + token['access_token']
 
-method = "POST"
+method = "GET"
 
 baseurl = "http://localhost:9876"
-url = baseurl + "/learn/api/public/v1/users"
+url = baseurl + "/learn/api/public/v1/courses/_6_1/crossListSet"
 
 headers = {
     'accept': "application/json",
@@ -55,14 +55,22 @@ headers = {
     'authorization': auth,
     }
 
+
 body = {
-    "userName": "yomamasofat",
-    "password": "yomamasofat",
+    "userName": "meganmason",
+    "password": "meganmason",
     "name": {
-        "given": "Yomama",
-        "family": "Sofat",
+        "given": "Megan",
+        "family": "Mason",
     },
 }
+
+# body = {
+#     "name": "Intro to Literature of the Classical Period",
+#     "courseId": "LIT-301",
+#     "description": "Read Homer, Virgil, Horace, Cicero, and more"
+# }
+
 
 payload = json.dumps(body)
 
